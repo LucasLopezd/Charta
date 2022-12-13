@@ -20,7 +20,7 @@ spring:
 
 #SUPABASE
   datasource:
-    url: jdbc:postgresql://db.niocqzxypzutwctzuyfj.supabase.co:5432/postgres?user=postgres&password=c8-11-m-javaangular
+    url: {URL_SUPABASE}
   jpa:
     show-sql: true
     hibernate:
@@ -50,11 +50,11 @@ server:
 
 
 # Api-Fixer KEY:
-api.key.fixer: QNqvHM1Rf3JjtimxQtMsqj0SXIqlXy7G
+api.key.fixer: {API_KEY_FIXER}
 api.url.fixer: https://api.apilayer.com/fixer/
 api.header-field.fixer: apikey
 
 # Api-SendGrid KEY:
-api.key.sendgrid: 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
-api.template.welcome.id: d-01cefce8cbfe4d5ebb58e8c0fec7fef3
-app.email: lucaslopezd@hotmail.com
+api.key.sendgrid: {API_KEY_SENDGRID}
+api.template.welcome.id: {API_KEY_TEMPLATE}
+app.email: {APP_EMAIL}
