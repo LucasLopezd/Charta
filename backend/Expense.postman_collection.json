@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "674115f3-216a-47f8-b1c5-db828aae0bc8",
+		"name": "Expense",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16752932"
+	},
+	"item": [
+		{
+			"name": "saveExpense",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test check status\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(\"CREATED\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"importe\": 123.5,\r\n    \"descripcion\": \"\",\r\n    \"categoriaId\": 3,\r\n    \"monedaId\": 2,\r\n    \"fecha\": \"2022-12-30\",\r\n    \"esIncluida\": true  \r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}expenses/save",
+					"host": [
+						"{{url}}expenses"
+					],
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateExpense",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"importe\": 11.5,\r\n    \"descripcion\": \"\",\r\n    \"categoriaId\": 2,\r\n    \"fecha\": \"2022-12-30\",\r\n    \"esIncluida\": true  \r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}expenses/update/11",
+					"host": [
+						"{{url}}expenses"
+					],
+					"path": [
+						"update",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findExpensesByUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}expenses/user/findAll",
+					"host": [
+						"{{url}}expenses"
+					],
+					"path": [
+						"user",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findExpensesByIdByUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}expenses/user/findById/1",
+					"host": [
+						"{{url}}expenses"
+					],
+					"path": [
+						"user",
+						"findById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findHome",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}expenses/user/home",
+					"host": [
+						"{{url}}expenses"
+					],
+					"path": [
+						"user",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findExpensesForCategories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}expenses/user/categoryGroup",
+					"host": [
+						"{{url}}expenses"
+					],
+					"path": [
+						"user",
+						"categoryGroup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}expenses/user/filter?userId=1&categoriesId=1,2&amountMin=1&amountMax=4500&start=2021-12-30&end=2022-12-10&orderBy=amount&order=DESC",
+					"host": [
+						"{{url}}expenses"
+					],
+					"path": [
+						"user",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "categoriesId",
+							"value": "1,2"
+						},
+						{
+							"key": "amountMin",
+							"value": "1"
+						},
+						{
+							"key": "amountMax",
+							"value": "4500"
+						},
+						{
+							"key": "start",
+							"value": "2021-12-30"
+						},
+						{
+							"key": "end",
+							"value": "2022-12-10"
+						},
+						{
+							"key": "orderBy",
+							"value": "amount"
+						},
+						{
+							"key": "order",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStatistics",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}expenses/user/statistics",
+					"host": [
+						"{{url}}expenses"
+					],
+					"path": [
+						"user",
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteExpenses",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}expenses/delete/1",
+					"host": [
+						"{{url}}expenses"
+					],
+					"path": [
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

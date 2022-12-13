@@ -1,0 +1,8 @@
+<p>gastos works!</p>
+
+<div *ngIf="listaGastos">
+    <div *ngFor="let item of listaGastos">
+        <p>{{item.date}}</p>
+        <p>{{item.codeCurrency}}</p>
+    </div>
+</div>

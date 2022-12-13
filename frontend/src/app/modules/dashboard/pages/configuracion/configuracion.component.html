@@ -1,0 +1,156 @@
+<!----
+<div class="d-none d-sm-none d-md-block">
+  <div class="princ">
+    <h1>Mi Perfil</h1>
+    <div class="d-flex d-inline mt-4">
+      <h5>Nombre</h5>
+      <h5 style="margin-left: 100px">Apellidos</h5>
+    </div>
+    <div class="d-flex d-inline mt-1">
+      <input type="text" style="width: 165px" placeholder="Nombre" />
+      <input
+        type="text"
+        name=""
+        id=""
+        style="margin-left: 10px; width: 300px"
+        placeholder="Apellidos "
+      />
+    </div>
+    <div class="mt-4">
+      <h5>Email</h5>
+      <input
+        type="email"
+        style="width: 475px"
+        class="mt-1"
+        placeholder="ejemplo@gmail.com"
+      />
+    </div>
+    <div class="dropdown mt-4">
+      <h6>Idioma de la aplicación</h6>
+      <select name="idioma" id="idioma" class="mt-1 menu">
+        <option value="rigatoni">Español</option>
+        <option value="dave">Ingles</option>
+      </select>
+    </div>
+    <div class="dropdown mt-4">
+      <h6>Divisa</h6>
+      <select name="idioma" id="idioma" class="mt-1 menu">
+        <option value="rigatoni">Peso argentino</option>
+        <option value="dave">Dolar</option>
+      </select>
+    </div>
+  </div>
+  <br />
+  <div class="d-flex flex-row-reverse bd-highlight mt-5">
+    <div class=""></div>
+    <div class="p-2 bd-highlight">
+      <button class="btn1">Restablecer</button>
+      <button class="btn">Guardar Cambios</button>
+    </div>
+  </div>
+</div>
+--->
+
+<!--Menu Pantallas smarphone-->
+
+<!-----
+<div class="d-block d-sm-block d-md-none">
+  <div class="align-items-center text-center">
+    <h1>Mi Perfil</h1>
+    <h5 class="mt-4">Nombre</h5>
+    <input type="text" style="width: 250px" placeholder="Nombre" />
+    <h5 class="mt-4">Apellidos</h5>
+    <input
+      type="text"
+      name=""
+      id=""
+      style="width: 250px"
+      placeholder="Apellidos "
+    />
+
+    <div class="mt-4">
+      <h5>Email</h5>
+      <input
+        type="email"
+        style="width: 400px"
+        class="mt-1"
+        placeholder="ejemplo@gmail.com"
+      />
+    </div>
+    <div class="dropdown mt-4">
+      <h6>Idioma de la aplicación</h6>
+      <select name="idioma" id="idioma" class="mt-1 menu">
+        <option value="rigatoni">Español</option>
+        <option value="dave">Ingles</option>
+      </select>
+    </div>
+    <div class="dropdown mt-4">
+      <h6>Divisa</h6>
+      <select name="idioma" id="idioma" class="mt-1 menu">
+        <option value="rigatoni">Peso argentino</option>
+        <option value="dave">Dolar</option>
+      </select>
+    </div>
+  </div>
+  <br />
+  <div class="align-items-center text-center">
+    <div class=""></div>
+    <div class="p-2 bd-highlight">
+      <button class="btn1">Restablecer</button>
+      <button class="btn">Guardar Cambios</button>
+    </div>
+  </div>
+</div>
+--->
+
+<section class="configurcion">
+  <nav id="dark-mode" lass="vistas" aria-label="Page navigation example">
+    <ul class="pagination mode">
+      <li class=""><button class="btn btn-light"  [ngStyle]="{'background-color':light==true?'#5D21D2':''}" (click)="light=true"><i class="bi bi-sun"></i></button></li>
+      <li class="page-item"><button  class="btn btn-light" [ngStyle]="{'background-color':light==false?'#5D21D2':''}" (click)="light=false"><i class="bi bi-moon"></i></button></li>
+    </ul>
+  </nav>
+  <div class="container contenido">
+    <div class="titular-config">
+        <h2>Mi perfil</h2>
+    </div>
+    <div class="nombre-apellido item">
+      <div class="nombre">
+        <label for="nombre">Nombre</label><br>
+        <input class="input-name" type="text" placeholder={{firstName}} [disabled]="editar">
+      </div>
+      <div class="nombre">
+        <label for="apellido">Apellido</label><br>
+        <input class="input-name" type="text" placeholder={{lastName}} [disabled]="editar">
+      </div>
+      <button class="btn-editar" (click)="editar=!editar"><i class="bi bi-pencil"></i></button>          
+    </div>
+    <div class="item">
+      <label for="email">Email</label><br>
+      <input class="input-email" type="email" placeholder={{email}} disabled>
+    </div>
+    <div class="item">
+      <label for="idioma">Idioma de la aplicación</label><br>
+      <select name="idioma" id="idioma" class="bg-light select ">
+        <option value="espanhol">Español</option>
+        <option value="ingles">Inglés</option>
+      </select>
+    </div>
+    <div class="item">
+      <label for="divisa">Divisa</label><br>
+      <select name="divisa" id="divisa" class="bg-light select">
+        <option value="pesoArg">Peso Argentino</option>
+        <option value="dolar">Dólar</option>
+        <option value="euro">Euro</option>
+      </select>
+    </div>
+    <div class="botoncillos">
+      <div class="tip">
+        <button id="cambiar" class="btn btn-orange" (click)="cambioRegistro()">Guardar cambios</button>
+      </div>      
+      <div class="tip restablecer">
+        <a class="restablecer" (click)="restablecer()">Restablecer</a>
+      </div>      
+    </div>    
+  </div>
+</section>

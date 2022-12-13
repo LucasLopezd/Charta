@@ -1,0 +1,43 @@
+<div class="dropdown show  d-inline-block">
+    <button id="boton-filtrar" class="btn btn-light dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="bi bi-text-left"></i> Filtrar
+    </button>              
+    <div id="tobiron" class="dropdown-menu bg-light" aria-labelledby="dropdownMenuLink">
+        <div class="text-center titulo-filtro">
+            <p>Filtros</p>
+        </div>
+        <hr>
+        <form (ngSubmit)="filtrar()">
+            <div class="form-group text-center">
+                <label for="">Desde</label><br>
+                <input type="date" style="width:150px">                
+            </div>
+            <div class="form-group text-center">
+                <label for="">Hasta</label><br>
+                <input type="date" style="width:150px">
+            </div>
+            <div class="form-group text-center">
+                <label for="">Importe mínimo</label><br>
+                <input type="number" style="width:150px">
+            </div>
+            <div class="form-group text-center">
+                <label for="">Importe máximo</label><br>
+                <input type="number" style="width:150px">
+            </div>
+            <div class="from-group text-center categorias">
+                <label for="">Categorias</label><br>
+                <input type="checkbox" class="btn-check m-1" name="options-servicios" id="options-servicios" autocomplete="off">
+                <label class="btn btn-outline-primary" for="options-servicios">Servicios</label>
+                <input type="checkbox" class="btn-check m-1" name="options-alimentos" id="options-alimentos" autocomplete="off">
+                <label class="btn btn-outline-warning" for="options-alimentos">Alimentos</label>
+                <input type="checkbox" class="btn-check m-1" name="options-movilidad" id="options-movilidad" autocomplete="off">
+                <label class="btn btn-outline-danger" for="options-movilidad">Movilidad</label>
+                <input type="checkbox" class="btn-check m-1" name="options-varios" id="options-varios" autocomplete="off">
+                <label class="btn btn-outline-success" for="options-varios">Varios</label>
+            </div>            
+            <div class="boton-aplicar text-center">
+                <button type="submit" data-toggle="dropdown" class="btn btn-orange">Aplicar</button>
+            </div>
+        </form>                    
+    </div>
+</div>

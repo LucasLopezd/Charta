@@ -1,0 +1,274 @@
+<!--Header-->
+
+<div class="background-purple"></div>
+<div id="headerDesk" class="nav-desk flex-wrap justify-content-around py-3 mb-4 ">
+  <div class="d-flex align-items-center mb-3 mb-md-0">
+    <a href="/" class="text-decoration-none">
+      <span class="fw-bold text-center logo-charta fs-4 ">CHA&#1071;TA</span>
+    </a>
+  </div>
+<!-- Nav NO_MOVIL-->
+  <div class="nav-desk">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a (click)="scrollTo('nuestroProducto')" class="nav-link aref-menu">Nuestro producto</a></li>
+      <li class="nav-item"><a (click)="scrollTo('conocenos')" class="nav-link aref-menu">Quienes somos</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-desk">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a  routerLink="/auth/login" class="nav-link">Iniciar sesion</a></li>
+      <li class="nav-item"><a  routerLink="/auth/registro" class="nav-link nav-link-crear" >Crear cuenta</a></li>
+    </ul>
+  </div>
+</div>
+<!--Fin header NO_MOVIL-->
+<!--  nav MOVIL-->
+<nav class=" nav-movil navbar navbar-expand-lg navbar-light ">
+  <div class="container-fluid">
+    <a href="/" class="text-decoration-none">
+      <span class="fw-bold text-center logo-charta fs-4 ">CHA&#1071;TA</span>
+    </a>
+    <button class="navbar-toggler"
+      type="button" data-bs-toggle="collapse" 
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a (click)="scrollTo('nuestroProducto')" class="nav-link" 
+          data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+           Nuestro Producto</a>
+        </li>
+        <li class="nav-item active">
+          <a (click)="scrollTo('conocenos')" class="nav-link" 
+          data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+           Quienes somos</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/auth/login" 
+          data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          Iniciar sesion</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/auth/registro" 
+          data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+           Crear cuenta</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Fin nav MOVIL-->
+
+
+<!--
+  Inicio banner descriptivo
+-->
+
+<div class="container container-landing col-xxl-8 px-4 ">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-4">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <!--
+      <img src="./../../../assets/img/wallet-hero.jpg" class="d-block mx-lg-auto img-fluid" alt="Wallet" width="700"
+        height="500" loading="lazy">
+        -->
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-8 fw-bold lh-1 mb-3" style="color:#fff ;">Organiza tus finanzas</h1>
+      <p class="lead"style="color:#fff ;">
+        Para darte una mano, hemos creado CHARTA donde podras registrar y ver
+        todos tus ingresos y gastos, tambien te daremos estadisticas para que puedas planificar mejor
+        tus siguientes movimientos financieros, y para no hacerla larga...
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+        <button type="button" routerLink="/auth/registro"  class="btn btn-lg px-4 me-md-2">Comencemos...</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fin banner -->
+
+<!-- Inicio seccion de propiedades de CHARTA-->
+<div class="container px-4">
+  <div class="iconos-container row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+
+    <div class="icono-container col d-flex row-cols">
+      <div>
+       <img src="./../../../assets/icons/device.svg" class="iconos" alt="">
+      </div>
+      <div class="icono-description flex-column-flex p-3 text-shadow-1">
+        <h3 class= "fs-4 lh-1">Multiples dispositivos</h3>
+        <p>
+          Podras acceder desde cualquier dispositivo alrededor del mundo.
+        </p>
+      </div>
+    </div>      
+
+    <div class="icono-container col d-flex row-cols">
+      <div>
+       <img src="./../../../assets/icons/secure.svg" class="iconos" alt="">
+      </div>
+      <div class="icono-description flex-column d-flex p-3 text-shadow-1">
+        <h3 class= "fs-4 lh-1">Seguridad</h3>
+        <p>
+          Mantenemos todos tus datos seguros y protegidos. 
+        </p>
+      </div>
+    </div>      
+
+    <div class="icono-container col d-flex row-cols">
+      <div>
+       <img src="./../../../assets/icons/cash-stack.svg" class="iconos" alt="">
+      </div>
+      <div class="icono-description flex-column d-flex p-3 text-shadow-1">
+        <h3 class= "fs-4 lh-1">Diferentes divisas</h3>
+        <p>
+          Podras incluir tus gastos e ingresos en la divisa que prefieras.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!---------------------------------------------------------------------->
+<!------
+<div class="p-4 p-md-5 mb-4 rounded d-flex flex-lg-row-reverse " id="nuestroProducto">
+  <div class="col-md-6 px-0">
+    <span>
+      | Nuestro producto
+    </span>
+    <h1 class="display-4">Visualiza tus estadisticas</h1>
+    <ul>
+      <li class="lead my-3"> Podes tener el control total de tus gastos y realizar los ajustes necesarios </li>
+      <li class="lead my-3"> Para cumplir tus sueños podras visualizar en donde tenes un 
+        mayor gasto y hacer un tracking de tus movimientos financieros </li>
+    </ul>
+  </div>
+  <div class="col np-image">
+    
+  </div>
+</div>----->
+<!------------------------------------------------------------------------>
+<!-----SECCION NUESTRO PRODUCTO------>
+<section id="nuestroProducto" class="nuestroProducto container">
+  <div class="presentacion">
+    <span class="segmento">| Nuestro producto</span>
+    <h2 class="pb-2">Podes tener el control total de tus gastos y realizar los ajustes necesarios.</h2>
+  </div>
+  <div class="parte-app">
+    <div class="texto-parte-app">
+      <p>Bienvenidx al dashboard de CHARTA,<br>donde tenés acceso a tu información y balances.</p>
+    </div>    
+    <img class="imagen-app" src="../../../assets/img/dashboard.png" alt="">
+  </div>
+  <div class="parte-app">
+    <div class="texto-parte-app">
+      <p>Agrega un nuevo gasto o ingreso.</p>
+    </div>    
+    <img class="imagen-app" src="../../../assets/img/dashboard-gastos.png" alt="">
+  </div>
+  <div class="parte-app">
+    <div class="texto-parte-app">
+      <p class="textp-parte-app">Visualiza tus estadísticas.</p>
+    </div>    
+    <img class="imagen-app" src="../../../assets/img/estadisticas.png" alt="">
+  </div>
+</section>
+
+<!------------------------------------------------------------>
+<!--Seccion imagenes de referencia de estadisticas de la app-->
+
+<!-----
+<div class="container px-4 py-5" id="custom-cards">
+  <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
+    <div class="col">
+      
+      <div class=" card card-cover overflow-hidden text-bg-dark shadow-lg"
+        style="background-image: url('./../../../assets/img/dashboard-general.png');">
+      </div>
+    </div>
+    <div class="col">
+            
+      <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg"
+        style="background-image: url('./../../../assets/img/dashboard-gastos.png');">
+      </div>
+    </div>
+  </div>
+</div>--->
+<!--------------------------------------------------------------->
+<!-----SECCION CONOCENOS------>
+ <div class="container px-4 py-5" id="conocenos">
+      <span class="segmento">| Conócenos</span>
+      <h2 class="pb-2 ">Conoce a nuestro equipo</h2>
+ </div>
+  
+      <!--Tarjetas de los participantes-->
+      <!----
+    <div class="card-group container">
+      <div *ngFor="let participantes of listaParticipantes2" class="col-md-3 align-items-center" >
+      <div *ngIf="participantes.description != null">
+      <div class="card" >
+        <div style="height: 400px;">
+        <img class="card-img-top imagen" src="{{participantes.image}}" alt="Card image cap">
+      </div>
+        <div class="card-body">
+          <h5 class="card-title" style="color: black;">{{participantes.nameComplete}}</h5>
+          <p class="card-text">{{participantes.description}}</p>
+          <p>
+            
+            <a href="{{participantes.linkedIn}}" target="_blank" *ngIf="participantes.linkedIn != null">
+              <i class="bi bi-linkedin" style="margin-right: 10px; font-size: 2rem;" ></i></a>
+
+            <a href="{{participantes.github}}" target="_blank" *ngIf="participantes.github != null">
+              <i class="bi bi-github " style="font-size: 2rem;"></i></a>
+            
+            <a href="{{participantes.behance}}" target="_blank" *ngIf="participantes.behance != null">
+              <i class="bi bi-behance" style="font-size: 2rem; margin-left: 10px;"></i>
+            </a>
+          
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{participantes.role}}</small>
+        </div>
+      </div>
+    </div>
+    </div>
+      
+    </div>--->
+<!------------------------------------------>
+<section >
+    <div class="tarjetas-par">
+      <div class="tarjeta-par" *ngFor="let participantes of listaParticipantes2">      
+        <div class="heading">
+          <div>
+            <img class="card-img-top foto" src="{{participantes.image}}" alt="card image cap">
+          </div>
+          <div class="text-center">
+            <h5 class="card-title" style="color: black;"><b>{{participantes.nameComplete}}</b></h5>
+          </div>
+          <div class="text-center p-1" *ngIf="participantes.description != null">
+            <p class="card-text" style="font-size:0.85rem">{{participantes.description}}</p>
+          </div>
+        </div>
+        <div class="footering">
+          <div class="enlaces">
+            <a href="{{participantes.linkedIn}}" target="_blank" *ngIf="participantes.linkedIn != null"><i class="bi bi-linkedin"></i></a>
+            <a href="{{participantes.github}}" target="_blank" *ngIf="participantes.github != null"><i class="bi bi-github "></i></a>
+            <a href="{{participantes.behance}}" target="_blank" *ngIf="participantes.behance != null"><i class="bi bi-behance"></i></a>
+          </div>
+          <div class="card-tar-footer text-center">
+            <small class="text-muted"><b>{{participantes.role}}</b></small>
+          </div>
+        </div>       
+      </div>
+    </div>
+</section>
+<footer>
+      <p class="text-center" style="color: #fff; background-color: var(--principal-color);">&copy; Copyright 2022 , All rights reserved by <span style="color:#FF8328 ;">CHA&#1071;TA</span></p>
+</footer>

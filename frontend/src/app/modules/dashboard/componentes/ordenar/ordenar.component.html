@@ -1,0 +1,9 @@
+<div ngbDropdown class="d-inline">
+    <button type="button" class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle>{{palabra}}</button>
+    <div id="abreteOrden" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem (click)="masRecientes()">Mas recientes</button>
+        <button ngbDropdownItem (click)="masAntiguos()">Mas antiguos</button>
+        <button ngbDropdownItem (click)="mayorImporte()">Mayor importe</button>
+        <button ngbDropdownItem (click)="menorImporte()">Menor importe</button>
+    </div>
+</div>

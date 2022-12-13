@@ -1,0 +1,267 @@
+:host{
+    --letra-gris:#3E3E3E;
+    --letra-blanca:#fff;
+    --principal-color:#5D21D2;
+    --secondary-color:#FF8328;
+}
+
+/*Estilos generales*/
+*{
+    color: #3E3E3E;
+    font-family: 'Open sans';
+}
+span{
+    color:var(--principal-color)
+}
+h1{
+    font-weight: 500;
+}
+h5{
+    font-weight: 300;
+    padding: 5px 0;
+    color: var(--letra-blanca);
+}
+
+/*
+    Insercion background morado, color del logo,
+    color blanco de letra  luego letra en hover.
+
+*/
+header{
+    color: var(--letra-blanca);
+}
+.logo-charta{
+    color: var(--secondary-color);
+}
+.background-purple{
+    display: block;
+    background-color: var(--principal-color);
+    position: absolute;
+    height: 626px;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+    bottom: 0%;
+    border-bottom-right-radius: 500px;
+    z-index: -1;
+}
+.aref-menu
+{
+    color: var(--letra-blanca);
+}
+.nav-link{
+    color: #fff;
+}
+.nav-link-crear{
+    color: #000;
+    background-color: #fff;
+}
+.aref-menu:hover{
+    color: var(--secondary-color)
+}
+.nav-link:hover{
+    color: var(--secondary-color);
+}
+.nav-link-crear:hover{
+    color: #fff;
+    background-color: var(--secondary-color);
+}
+.nav-pills li a {
+    cursor:pointer
+}
+/*
+Color boton hero
+*/
+
+button{
+    background-color: var(--secondary-color);
+    color: var(--letra-blanca);
+}
+button:hover{
+    background-color: #fff;
+    color: var(--secondary-color)
+}
+
+/*
+Estilos seccion caracteristicas
+*/
+.icono-container{
+    align-items: center;
+}
+.iconos{
+    width: 50px;
+}
+.icono-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    height: auto;
+}
+/*
+Estilos section nuestro producto
+*/
+.np-image{
+    position: relative;
+    width: 722px;
+    height: 722px;
+    top: -148px;
+
+    background: radial-gradient(50% 50% at 50% 50%, #5D21D2 0%, rgba(93, 33, 210, 0) 100%);
+    filter: blur(25px);
+}
+/*
+    Estilo imagenes estadisticas
+*/
+.card-cover{
+    background-size: contain;
+    height: 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*
+Estilos footer
+*/
+footer{
+    background-color: var(--principal-color);
+    height: 5vh;
+    margin-top: 10vh;
+}
+.footer-content{
+    padding: 0px 100px;
+}
+/*Media query*/
+/*
+@media only screen and (max-width:730px){   
+}*/
+
+.imagen{
+    height: 150px;
+    width: 150px;
+    margin-top: 35px;
+    border-radius: 75px;
+}
+.card{
+    text-align: center; 
+    align-items: center; 
+    margin: 10px 10px 5px 10px;
+    height: 300px;      
+}
+
+
+@media only screen and (max-width: 729px) {
+    .nav-movil{
+        display: flex;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        height: 100%;
+        background-color: var(--principal-color);
+    }
+    li:hover{
+        color: var(--secondary-color);
+    }
+    .nav-desk{
+        display: none;
+    }
+    .container-landing{
+        padding:10px 5px ;
+    }
+}
+@media only screen and (min-width: 730px){
+    .nav-movil{
+        display: none;
+    }
+    .nav-desk{
+        display: flex;
+    }
+}
+@media only screen and (min-width: 425px){
+    .container-landing{
+        padding-top: 3rem;
+        padding-left: 3rem;
+        margin-top: 20vh;
+    }
+}
+   
+/*---------------------*/
+
+
+.imagen-app {
+    width:60vw;
+    height:auto;
+    border:2px solid #3E3E3E;
+    border-radius:15px
+}
+.nuestroProducto {
+    text-align: center;
+    margin-top:0;
+    scroll-margin-top: 40px;
+}
+.texto-parte-app {
+    margin:45px 0 25px
+}
+.texto-parte-app p {
+    font-size:1.2rem
+}
+.presentacion {
+    text-align:left;    
+}
+.segmento {
+    font-size:1.3rem;    
+}
+.tarjetas-par {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-around;
+    padding:25px
+}
+.tarjeta-par {
+    width:200px;
+    height:350px;
+    border:1px solid #b3acac;
+    margin:10px;
+    border-radius:10px
+}
+.foto {
+    border-radius:100%;
+    height: 120px;
+    width: 120px;
+    margin:10px 40px
+}
+.enlaces {
+    display:flex;
+    justify-content: center;
+}
+.enlaces a {
+    margin:15px
+}
+.enlaces a i{
+    font-size:20px
+}
+.heading {
+    height:260px;
+    margin:0;
+    padding:0;
+}
+.footering {
+    height:70px;
+    padding:0 10px;
+    margin:0;
+}
+footer {
+    height:max-content;
+    padding-top:20px;
+    padding-bottom:20px
+}
+footer p {
+    margin:0 auto;
+    padding:0 auto
+}
+@media only screen and (max-width: 900px){
+    .imagen-app{
+        width:80vw
+    }
+}

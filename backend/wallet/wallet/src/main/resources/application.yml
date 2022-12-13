@@ -1,0 +1,60 @@
+spring:
+#H2
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    driverClassName: org.h2.Driver
+#    password: sa
+#  h2:
+#    console:
+#      enabled: 'true'
+#      path: /h2-console
+#  jpa:
+#    open-in-view: 'false'
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.H2Dialect
+#        format_sql: 'true'
+#    show-sql: 'true'
+#    hibernate:
+#      ddl-auto: 'update'
+
+#SUPABASE
+  datasource:
+    url: jdbc:postgresql://db.niocqzxypzutwctzuyfj.supabase.co:5432/postgres?user=postgres&password=c8-11-m-javaangular
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+#LOCAL
+#  datasource:
+#    username: root
+#    url: jdbc:mysql://localhost:3306/dbcharta
+#    password: 43824382
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+
+server:
+  port: 8081
+
+#Springdoc
+#springdoc:
+#  api-docs:
+#    path: /wallet-openapi
+
+
+# Api-Fixer KEY:
+api.key.fixer: QNqvHM1Rf3JjtimxQtMsqj0SXIqlXy7G
+api.url.fixer: https://api.apilayer.com/fixer/
+api.header-field.fixer: apikey
+
+# Api-SendGrid KEY:
+api.key.sendgrid: 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
+api.template.welcome.id: d-01cefce8cbfe4d5ebb58e8c0fec7fef3
+app.email: lucaslopezd@hotmail.com

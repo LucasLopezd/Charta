@@ -1,0 +1,117 @@
+
+/*h1 {
+    font-weight: bolder;
+}
+
+.menu{
+    width: 150px;
+    border-color: #3E3E3E;
+    border-width: 1px;
+    border-radius: 5px;
+    
+}
+.btn{
+    background-color: #FF832B;
+    color: #FAFAFA;
+    margin-left: 10px;
+}
+.btn1{
+    border: none;
+    background-color: #FAFAFA;
+    color: #d9d9d9;
+    text-decoration: underline;
+}
+*/
+:host {
+    display: block;
+    width: 100%;
+}
+.configuracion {
+    text-align: center;
+}
+.titular-config {
+    margin-top:15px
+}
+.titular-config h2 {
+    margin-left:10%;
+}
+.nombre-apellido {
+    display:flex;
+    flex-wrap: wrap;
+}
+.input-name {
+    width:150px;
+    margin-right: 25px;
+}
+.btn-editar {
+    border:none;
+    background:transparent;
+    color:black;
+    margin-top:25px
+}
+
+.input-email {
+    width:325px
+}
+.item {
+    margin-top:35px;
+    margin-left:10%;
+}
+.select {
+    margin-top:3px;
+    border-radius:2px;
+    border:1px solid rgb(208, 202, 202);
+    width:150px
+}
+label {
+    font-weight: bolder;
+}
+.botoncillos {
+    text-align:center;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-top:40px
+}
+.tip {
+    margin:15px 50px
+}
+.restablecer {
+    padding-top:5px
+}
+#cambiar:hover {
+    background:white;
+    border:1px solid #FF8328;
+    color:#FF8328;
+}
+.dark-mode {
+    position:absolute;
+    left: 80%;
+}
+.mode {
+    text-align:right
+}
+#dark-mode {
+    position:relative;
+    display: flex;
+    justify-content: end;
+    margin-right: 30px;
+}
+@media only screen and (max-width: 450px) {
+    .input-email {
+        width:250px
+    }
+    .item {
+        margin-top:25px;
+    }
+    .botoncillos {
+        margin-top:25px
+    }
+    .titular-config {
+        margin-top:0px
+    }
+    .tip {
+        margin:10px 50px
+    }
+
+}

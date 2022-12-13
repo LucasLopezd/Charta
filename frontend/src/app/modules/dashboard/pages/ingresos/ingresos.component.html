@@ -1,0 +1,599 @@
+
+
+<section class="seccion">
+    <div class="titular">
+        <h2>Mis Ingresos</h2>
+    </div>
+    <div class="seleccion">
+        <!-----BOTÓN NUEVO INGRESO------>
+        <div class="selector-left">
+            <button  class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#nuevoGasto" (click)="clearValidatorsAdd()">+ Nuevo Ingreso</button>            
+        </div>   
+        <!-----SELECTORES Y FILTROS---->      
+        <div *ngIf="listaIngreso" class="selector-right">
+            <app-ordenar (mensaje)="recibirOrden($event)"></app-ordenar>
+            <!----
+            <div class="dropdown show  d-inline-block">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-text-left"></i> Filtrar
+                </a>              
+                <div id="tobiron" class="dropdown-menu bg-light" aria-labelledby="dropdownMenuLink">
+                    <div class="text-center titulo-filtro">
+                        <p>Filtros</p>
+                    </div>
+                    <hr>
+                    <div class="item-filtro">
+                        <div class="en-linea text-center">
+                            <div class="sub-item mb-1">
+                                <label for="">Desde</label><br>
+                                <input type="date">
+                            </div>
+                            <div class="sub-item mb-2">
+                                <label for="">Hasta</label><br>
+                                <input type="date">
+                            </div>                
+                        </div>
+                    </div>
+                    <div class="item-filtro">
+                        <div class="en-linea">
+                            <div class="sub-item mb-1">
+                                <label for="">Mínimo</label>
+                                <input type="number">
+                            </div>
+                            <div class="sub-item mb-2">
+                                <label for="">Máximo</label>
+                                <input type="number">
+                            </div>                
+                        </div>
+                    </div>
+                    <div class="item-filtro">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Servicios
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Alimentos
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Movilidad
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Varios
+                            </label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="boton-aplicar text-center">
+                        <button class="btn btn-aceptar">Aplicar</button>
+                    </div>
+                </div>
+            </div>--->
+
+            <div class="dropdown show  d-inline-block">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-text-left"></i> Filtrar
+                </a>
+                <!-----              
+                <div id="tobiron" class="dropdown-menu bg-light" aria-labelledby="dropdownMenuLink">
+                    <div class="text-center titulo-filtro">
+                        <p class="mt-2"><b>FILTROS</b></p>
+                    </div>
+                    <hr>                   
+                    <form (ngSubmit)="filtrar()">
+                        <div class="form-group text-center">
+                            <label for="">Desde</label><br>
+                            <input type="date" style="width:150px">                
+                        </div>
+                        <div class="form-group text-center">
+                            <label for="">Hasta</label><br>
+                            <input type="date" style="width:150px">
+                        </div>
+                        <hr>
+                        <div class="form-group text-center">
+                            <label for="">Importe mínimo</label><br>
+                            <input type="number" style="width:150px">
+                        </div>
+                        <div class="form-group text-center">
+                            <label for="">Importe máximo</label><br>
+                            <input type="number" style="width:150px">
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <label for="">Tipo</label><br>
+                        </div>                       
+                        <div class="from-group text-center categorias">                            
+                            <div class="item-cate">                                
+                                <input type="checkbox" class="btn-check m-2" name="options-servicios" id="options-servicios" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="options-servicios">Anual</label>
+                            </div>
+                            <div class="item-cate">                                
+                                <input type="checkbox" class="btn-check m-2" name="options-alimentos" id="options-alimentos" autocomplete="off">
+                                <label class="btn btn-outline-warning" for="options-alimentos">Mensual</label>
+                            </div>
+                            <div class="item-cate">                                
+                                <input type="checkbox" class="btn-check m-2" name="options-movilidad" id="options-movilidad" autocomplete="off">
+                                <label class="btn btn-outline-danger" for="options-movilidad">Semanal</label>
+                            </div>
+                            <div class="item-cate">
+                                <input type="checkbox" class="btn-check m-2" name="options-varios" id="options-varios" autocomplete="off">
+                                <label class="btn btn-outline-success" for="options-varios">Diario</label>
+                            </div>                           
+                        </div>
+                        <hr>            
+                        <div class="boton-aplicar text-center">
+                            <button type="submit" data-toggle="dropdown" class="btn btn-orange">Aplicar</button>                                                 
+                        </div>
+                        <hr>
+                        <div class="restablecer text-center">
+                            <a (click)="restablecer()" data-toggle="dropdown">Restablecer valores</a>
+                        </div>                        
+                    </form>                
+                </div>--->
+            </div>                                  
+        </div>                                     
+    </div>
+
+    <!-----ELECCION DE VISTAS Y PAGINACION----->
+    <div class="vistas-paginas">
+        <!-----Elección de vistas----->
+        <nav class="vistas" aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><button class="btn btn-light"  [ngStyle]="{'background-color':active==true?'#5D21D2':''}" (click)="active=true"><i class="bi bi-list-ul"></i></button></li>
+              <li class="page-item"><button  class="btn btn-light" [ngStyle]="{'background-color':active==false?'#5D21D2':''}" (click)="active=false"><i class="bi bi-view-list"></i></button></li>
+            </ul>
+        </nav>
+        <!----Elección de páginas---->
+        <div *ngIf="hardcodeo">
+            <nav class="vistas" aria-label="Page navigation example">
+                <ul class="pagination">
+                <li class="page-item"><button class="btn btn-light" (click)="previusPage()" [disabled]="page===0"><i class="bi bi-arrow-left"></i></button></li>
+                <li class="page-item"><button class="btn btn-light" (click)="nextPage()" [disabled]="page+10>listilla.length"><i class="bi bi-arrow-right"></i></button></li>
+                </ul>
+            </nav>
+        </div>
+        <div *ngIf="!hardcodeo">
+            <nav class="vistas" aria-label="Page navigation example">
+                <ul class="pagination">
+                <li class="page-item"><button class="btn btn-light" (click)="previusPage()" [disabled]="page===0"><i class="bi bi-arrow-left"></i></button></li>
+                <li class="page-item"><button class="btn btn-light" (click)="nextPage()" [disabled]="page+10>listaIngreso.length"><i class="bi bi-arrow-right"></i></button></li>
+                </ul>
+            </nav>
+        </div>        
+    </div>
+    
+    <!----HARCODEADO---->
+    <div *ngIf="hardcodeo">
+        <!-----VISTA TABLA EN PC-->    
+        <div *ngIf="active" class="tabla-gastos">        
+            <div  class="table-responsive">
+                <table class="table table-sm">
+                    <thead>
+                        <tr class="p-3">
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Importe</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let item of lista2Ingresos | paginacionIngreso:page:orden">
+                        <tr class="p-2">
+                            <td>{{item.fecha.getDate()}}/{{item.fecha.getMonth()+1}}/{{item.fecha.getFullYear()}}</td>
+                            <td><span id="categorizador" class="p-2 badge" [class]="{'text-bg-warning':(item.categoria=='Anual'),'text-bg-success':(item.categoria=='Mensual'),'text-bg-danger':(item.categoria=='Semanal'),'text-bg-primary':(item.categoria=='Diario')}">{{item.categoria}}</span></td>
+                            <td>{{item.descripcion}}</td>
+                            <td>${{item.importe}}</td>
+                            <td><app-editar data-bs-toggle="modal" data-bs-target="#editarIngreso" (click)="editableId(item.importe,item)"></app-editar><app-borrar data-bs-toggle="modal" data-bs-target="#eliminarIngreso" (click)="trashId(item.importe)"></app-borrar></td>
+                        </tr>                                      
+                    </tbody>
+                </table>
+            </div>        
+        </div>
+
+        <!-----VISTA TABLA EN MOVIL---->    
+        <div *ngIf="active" class="tabla-gastos-movil">        
+            <div  class="table-responsive">
+                <table class="table table-sm">
+                    <thead>
+                        <tr class="p-3">
+                            <th scope="col">Categoria/<br>Fecha</th>
+                            <th scope="col">Importe/<br>Descripción</th>                    
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let item of lista2Ingresos | paginacionIngreso:page:orden">
+                        <tr class="p-2">
+                            <td><span id="categorizador" class="p-2 badge" [class]="{'text-bg-warning':(item.categoria=='Anual'),'text-bg-success':(item.categoria=='Mensual'),'text-bg-danger':(item.categoria=='Semanal'),'text-bg-primary':(item.categoria=='Diario')}">{{item.categoria}}</span><br><span id="fechoso">({{item.fecha.getDate()}}/{{item.fecha.getMonth()+1}}/{{item.fecha.getFullYear()}})</span></td>
+                            <td>${{item.importe}}<br>{{item.descripcion}}</td>
+                            <td class=""><app-editar data-bs-toggle="modal" data-bs-target="#editarIngreso" (click)="editableId(item.importe,item)"></app-editar><app-borrar data-bs-toggle="modal" data-bs-target="#eliminarIngreso" (click)="trashId(item.importe)"></app-borrar></td>
+                        </tr>                                      
+                    </tbody>
+                </table>
+            </div>        
+        </div>
+
+        <!-----VISTA TARJETA EN PC------->    
+        <div *ngIf="!active" class="tabla-gastos">        
+            <div class="tarjeta-titulo">
+                <div class="fecha-tar">
+                    <p>Fecha</p>
+                </div>
+                <div class="cate-tar">
+                    <p>Categoría</p>
+                </div>
+                <div class="descri-tar">
+                    <p>Descripción</p>
+                </div>
+                <div class="importe-tar">
+                    <p>Importe</p>
+                </div>
+                <div class="botones-tar">
+                    <p>Editar/Eliminar</p>
+                </div>
+            </div>
+            <div class="tarjetas" *ngFor="let item of lista2Ingresos | paginacionIngreso:page:orden">
+                <div class="tarjeta">
+                    <div class="fecha-tar">
+                        <p>{{item.fecha.getDate()}}/{{item.fecha.getMonth()+1}}/{{item.fecha.getFullYear()}}</p>
+                    </div>
+                    <div class="cate-tar">
+                        <span id="categorizador" class="p-2 badge" [class]="{'text-bg-warning':(item.categoria=='Anual'),'text-bg-success':(item.categoria=='Mensual'),'text-bg-danger':(item.categoria=='Semanal'),'text-bg-primary':(item.categoria=='Diario')}">{{item.categoria}}</span>
+                    </div>
+                    <div class="descri-tar">
+                        <p>{{item.descripcion}}</p>
+                    </div>
+                    <div class="importe-tar">
+                        <span>${{item.importe}}</span>
+                    </div>
+                    <div class="botones-tar">
+                        <app-editar data-bs-toggle="modal" data-bs-target="#editarGasto" (click)="editableId(item.importe,item)"></app-editar><app-borrar data-bs-toggle="modal" data-bs-target="#eliminarGasto" (click)="trashId(item.importe)"></app-borrar>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <!----VISTA TARJETAS EN MOVIL----->    
+        <div *ngIf="!active" class="tabla-gastos-movil">        
+            <div class="tarjeta-titulo-movil">
+                <div class="indica-tar-movil">
+                    <p>Categoria/<br>Fecha</p>
+                </div>
+                <div class="indica-tar-movil">
+                    <p>Importe/<br>Descripción</p>
+                </div>
+                <div class="indica-tar-movil">
+                    <p>Modificar</p>
+                </div>
+            </div>
+            <div class="tarjetas" *ngFor="let item of lista2Ingresos | paginacionIngreso:page:orden">
+                <div class="tarjeta">
+                    <div class="fecha-tar">
+                        <span id="categorizador" class="p-2 badge" [class]="{'text-bg-warning':(item.categoria=='Anual'),'text-bg-success':(item.categoria=='Mensual'),'text-bg-danger':(item.categoria=='Semanal'),'text-bg-primary':(item.categoria=='Diario')}">{{item.categoria}}</span><br>
+                        <p>{{item.fecha.getDate()}}/{{item.fecha.getMonth()+1}}/{{item.fecha.getFullYear()}}</p>
+                    </div>
+                    <div class="descri-tar">
+                        <span>${{item.importe}}</span><br>
+                        <p>{{item.descripcion}}</p>
+                    </div>
+                    <div class="botones-tar-movil">
+                        <app-editar data-bs-toggle="modal" data-bs-target="#editarGasto" (click)="editableId(item.importe,item)"></app-editar><app-borrar data-bs-toggle="modal" data-bs-target="#eliminarGasto" (click)="trashId(item.importe)"></app-borrar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <!-----DESDE EL BACK------>
+    <div *ngIf="!hardcodeo">
+        <div *ngIf="listaIngreso">
+            <!-----VISTAS TABLA EN PC----->
+            <div *ngIf="active" class="tabla-gastos">        
+                <div  class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr class="p-3">
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Importe</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let item of listaIngreso | ingreso:page:orden">
+                            <tr class="p-2">
+                                <td>{{invertir(item.fecha)}}</td>
+                                <td><span id="categorizador" class="p-2 badge" [class]="{'text-bg-primary':(item.categoria=='Mensual'),'text-bg-warning':(item.categoria=='Diario'),'text-bg-success':(item.categoria=='Semanal'),'text-bg-danger':(item.categoria=='Anual')}">{{item.categoria}}</span></td>
+                                <td>{{item.descripcion}}</td>
+                                <td>${{item.importe}}</td>
+                                <td><app-editar data-bs-toggle="modal" data-bs-target="#editarIngreso" (click)="editableId(item.id,item)"></app-editar><app-borrar data-bs-toggle="modal" data-bs-target="#eliminarIngreso" (click)="trashId(item.id)"></app-borrar></td>
+                            </tr>                                      
+                        </tbody>
+                    </table>
+                </div>        
+            </div>
+        
+            <!-----VISTAS TABLA EN MOVIL----->
+            <div *ngIf="active" class="tabla-gastos-movil">        
+                <div  class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr class="p-3">
+                                <th scope="col">Categoria/<br>Fecha</th>
+                                <th scope="col">Importe/<br>Descripción</th>                    
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let item of listaIngreso | ingreso:page:orden">
+                            <tr class="p-2">
+                                <td><span id="categorizador" class="p-2 badge" [class]="{'text-bg-primary':(item.categoria=='Mensual'),'text-bg-warning':(item.categoria=='Diario'),'text-bg-success':(item.categoria=='Semanal'),'text-bg-danger':(item.categoria=='Anual')}">{{item.categoria}}</span><br><span id="fechoso">({{invertir(item.fecha)}})</span></td>
+                                <td>${{item.importe}}<br>{{item.descripcion}}</td>
+                                <td class=""><app-editar data-bs-toggle="modal" data-bs-target="#editarIngreso" (click)="editableId(item.id,item)"></app-editar><app-borrar data-bs-toggle="modal" data-bs-target="#eliminarIngreso" (click)="trashId(item.id)"></app-borrar></td>
+                            </tr>                                      
+                        </tbody>
+                    </table>
+                </div>        
+            </div>
+        
+            <!-----VISTA TARJETA EN PC------->    
+            <div *ngIf="!active" class="tabla-gastos">        
+                <div class="tarjeta-titulo">
+                    <div class="fecha-tar">
+                        <p>Fecha</p>
+                    </div>
+                    <div class="cate-tar">
+                        <p>Categoría</p>
+                    </div>
+                    <div class="descri-tar">
+                        <p>Descripción</p>
+                    </div>
+                    <div class="importe-tar">
+                        <p>Importe</p>
+                    </div>
+                    <div class="botones-tar">
+                        <p>Editar/Eliminar</p>
+                    </div>
+                </div>
+                <div class="tarjetas" *ngFor="let item of listaIngreso | ingreso:page:orden">
+                    <div class="tarjeta">
+                        <div class="fecha-tar">
+                            <p>{{invertir(item.fecha)}}</p>
+                        </div>
+                        <div class="cate-tar">
+                            <span id="categorizador" class="p-2 badge" [class]="{'text-bg-primary':(item.categoria=='Mensual'),'text-bg-warning':(item.categoria=='Diario'),'text-bg-success':(item.categoria=='Semanal'),'text-bg-danger':(item.categoria=='Anual')}">{{item.categoria}}</span>
+                        </div>
+                        <div class="descri-tar">
+                            <p>{{item.descripcion}}</p>
+                        </div>
+                        <div class="importe-tar">
+                            <span>${{item.importe}}</span>
+                        </div>
+                        <div class="botones-tar">
+                            <app-editar data-bs-toggle="modal" data-bs-target="#editarIngreso" (click)="editableId(item.id,item)"></app-editar><app-borrar data-bs-toggle="modal" data-bs-target="#eliminarIngreso" (click)="trashId(item.id)"></app-borrar>
+                        </div>
+                    </div>
+                </div>       
+            </div>
+        
+            <!----VISTA TARJETAS EN MOVIL----->    
+            <div *ngIf="!active" class="tabla-gastos-movil">        
+                <div class="tarjeta-titulo-movil">
+                    <div class="indica-tar-movil">
+                        <p>Categoria/<br>Fecha</p>
+                    </div>
+                    <div class="indica-tar-movil">
+                        <p>Importe/<br>Descripción</p>
+                    </div>
+                    <div class="indica-tar-movil">
+                        <p>Modificar</p>
+                    </div>
+                </div>
+                <div class="tarjetas" *ngFor="let item of listaIngreso | ingreso:page:orden">
+                    <div class="tarjeta">
+                        <div class="fecha-tar">
+                            <span id="categorizador" class="p-2 badge" [class]="{'text-bg-primary':(item.categoria=='Mensual'),'text-bg-warning':(item.categoria=='Diario'),'text-bg-success':(item.categoria=='Semanal'),'text-bg-danger':(item.categoria=='Anual')}">{{item.categoria}}</span><br>
+                            <p>{{invertir(item.fecha)}}</p>
+                        </div>
+                        <div class="descri-tar">
+                            <span>${{item.importe}}</span><br>
+                            <p>{{item.descripcion}}</p>
+                        </div>
+                        <div class="botones-tar-movil">
+                            <app-editar data-bs-toggle="modal" data-bs-target="#editarIngreso" (click)="editableId(item.id,item)"></app-editar><app-borrar data-bs-toggle="modal" data-bs-target="#eliminarIngreso" (click)="trashId(item.id)"></app-borrar>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>     
+    </div>
+
+</section>
+
+<div *ngIf="!listaIngreso">
+    <div class="text-center">
+        <div id="spinner" class="spinner-border" role="status">
+          <span  class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+
+
+
+
+<!------------------MODALES---------------------->
+
+<!--MODAL NUEVO INGRESO--->
+<div class="modal fade" id="nuevoGasto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-agregar">
+        <div class="modal-header text-center">
+          <h5 class="modal-title" id="staticBackdropLabel">NUEVO INGRESO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="clearValidatorsAdd()"></button>
+        </div>
+        <!------Formulario------->
+        <form [formGroup]="addIngresoForm" id="agregarEducacion" class="add-form" (ngSubmit)="guardarIngreso()" novalidate autocomplete="off" required>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="date" id="fecha"  formControlName="fecha" class="form-control" min="2000-01-01" max="2030-12-31" [ngClass]="{'is-valid':!FechaAdd?.errors&& FechaAdd?.touched}">
+                    <div *ngIf="FechaAdd?.errors && FechaAdd?.touched">
+                        <p *ngIf="FechaAdd?.hasError('required')" class="text-danger">
+                          Ingrese una fecha
+                        </p>  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="categoria" class="form-label">Tipo</label><br>
+                    <select type="text" id="categoria"  formControlName="tipo" class="form-control" [ngClass]="{'is-valid':!CategoriaAdd?.errors&& CategoriaAdd?.touched}"> 
+                        <option value="Anual">Anual</option>
+                        <option value="Mensual">Mensual</option>
+                        <option value="Semanal">Semanal</option>
+                        <option value="Diario">Diario</option>                   
+                    </select>
+                    <div *ngIf="CategoriaAdd?.errors && CategoriaAdd?.touched">
+                        <p *ngIf="CategoriaAdd?.hasError('required')" class="text-danger">
+                          Ingrese una categoria
+                        </p>  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="importe" class="form-label">Importe</label>
+                    <input type="number" id="importe"  formControlName="importe" class="form-control" [ngClass]="{'is-valid':!ImporteAdd?.errors&& ImporteAdd?.touched}">
+                    <div *ngIf="ImporteAdd?.errors && ImporteAdd?.touched">
+                        <p *ngIf="ImporteAdd?.hasError('required')" class="text-danger">
+                          Ingrese un importe
+                        </p>
+                        <p *ngIf="ImporteAdd?.hasError('min')" class="text-danger">
+                            El importe debe ser mayor a cero
+                        </p>  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <input type="text" id="descripcion"  formControlName="descripcion" class="form-control" [ngClass]="{'is-valid':!DescripcionAdd?.errors&& DescripcionAdd?.touched}">
+                    <div *ngIf="DescripcionAdd?.errors && DescripcionAdd?.touched">
+                        <p *ngIf="DescripcionAdd?.hasError('required')" class="text-danger">
+                            Ingrese una descripción
+                        </p>
+                        <p *ngIf="DescripcionAdd?.hasError('maxlength')" class="text-danger">
+                            Menos de 14 caracteres
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer botones">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="clearValidatorsAdd()">Cancelar</button> 
+                    <button type="submit" class="btn btn-aceptar" data-bs-dismiss="modal"  [disabled]="!addIngresoForm.valid">Aceptar</button>                               
+                </div>
+            </div>    
+        </form>
+      </div>
+    </div>
+</div>
+
+<!--MODAL EDITAR INGRESO--->
+<div class="modal fade" id="editarIngreso" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-agregar">
+        <div class="modal-header text-center">
+          <h5 class="modal-title" id="staticBackdropLabel">EDITAR INGRESO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="clearValidatorsEdit()"></button>
+        </div>
+        <!------Formulario------->        
+        <form [formGroup]="editIngresoForm" id="agregarEducacion" (ngSubmit)="actualizarIngreso()" autocomplete="off">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="date" id="fecha"  formControlName="fecha" class="form-control" min="2000-01-01" max="2030-12-31" [ngClass]="{'is-valid':!FechaEdit?.errors&& FechaEdit?.touched}">
+                    <div *ngIf="FechaEdit?.errors && FechaEdit?.touched">
+                        <p *ngIf="FechaEdit?.hasError('required')" class="text-danger">
+                          Ingrese una fecha
+                        </p>  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="categoria" class="form-label">Tipo</label><br>
+                    <select type="text" id="categoria"  formControlName="tipo" class="form-control" [ngClass]="{'is-valid':!CategoriaEdit?.errors&& CategoriaEdit?.touched}"> 
+                        <option value="Anual">Anual</option>
+                        <option value="Mensual">Mensual</option>
+                        <option value="Semanal">Semanal</option>
+                        <option value="Diario">Diario</option>                   
+                    </select>
+                    <div *ngIf="CategoriaEdit?.errors && CategoriaEdit?.touched">
+                        <p *ngIf="CategoriaEdit?.hasError('required')" class="text-danger">
+                          Ingrese una categoria
+                        </p>  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="importe" class="form-label">Importe</label>
+                    <input type="number" id="importe"  formControlName="importe" class="form-control" [ngClass]="{'is-valid':!ImporteEdit?.errors&& ImporteEdit?.touched}">
+                    <div *ngIf="ImporteEdit?.errors && ImporteEdit?.touched">
+                        <p *ngIf="ImporteEdit?.hasError('required')" class="text-danger">
+                          Ingrese un importe
+                        </p>
+                        <p *ngIf="ImporteEdit?.hasError('min')" class="text-danger">
+                            El importe debe ser mayor a cero
+                        </p>  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <input type="text" id="descripcion"  formControlName="descripcion" class="form-control" [ngClass]="{'is-valid':!DescripcionEdit?.errors&& DescripcionEdit?.touched}">
+                    <div *ngIf="DescripcionEdit?.errors && DescripcionEdit?.touched">
+                        <p *ngIf="DescripcionEdit?.hasError('required')" class="text-danger">
+                            Ingrese una descripción
+                        </p>
+                        <p *ngIf="DescripcionEdit?.hasError('maxlength')" class="text-danger">
+                            Menos de 14 caracteres
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer botones">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="clearValidatorsEdit()">Cancelar</button> 
+                    <button type="submit" class="btn btn-aceptar" data-bs-dismiss="modal" [disabled]="!editIngresoForm.valid">Aceptar</button>                               
+                </div>
+            </div>    
+        </form>
+      </div>
+    </div>
+</div>
+
+<!---MODAL ELIMINAR INGRESO--->
+<div class="modal fade" id="eliminarIngreso" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-agregar">
+        <!---
+        <div class="modal-header text-center">
+          <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR INGRESO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>--->
+        <!------Formulario------->
+        <form >
+            <div class="modal-body">
+                <div>
+                    <h5 class="titulo-modal-borrar">¿Desea eliminar este ingreso?</h5>
+                </div>
+            </div>
+            <div class="modal-footer botones">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-aceptar" data-bs-dismiss="modal" (click)="eliminarIngreso()">Eliminar</button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>

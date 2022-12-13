@@ -1,0 +1,153 @@
+:host {
+    display: block;
+    width: 100%;
+}
+/*
+.titular {
+    text-align: left;
+    margin-bottom:25px;    
+}
+.titular h2 {
+    font-weight: bolder
+}
+.seleccion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.btn-orange {
+    background:#FF8328;
+    color:white
+}*/
+
+/* Estilos en Tabla*/
+tbody tr {
+    height:20px;
+    font-size: 1rem;
+    background:white;
+}
+
+thead tr {
+    background-color:#FAFAFA;
+    font-size:1rem;
+}
+th {
+    padding:15px
+}
+td {
+    padding:15px
+}
+/*
+app-editar, app-borrar {
+    margin:0 7px;
+}
+*/
+/*
+.filtros {
+    display:flex;
+    flex-direction: row;
+    justify-content:center    
+}
+.filtros button {
+    width:120px;
+    margin:0 25px;
+}
+.collapse {
+    margin-bottom: 5px;
+}
+.selector-right select{
+    margin-right: 20px;
+    padding:4px;
+    border:rgb(220, 212, 212)
+}
+
+.botones {
+    display:flex;
+    justify-content: space-around;
+}*/
+/*
+.modal-agregar {
+    background-color: #FAFAFA;
+    text-align: center;
+}
+.modal-agregar select {
+    width:100%;
+    padding:5px
+}
+.btn-aceptar {
+    background:#FF8328;
+    color:white;   
+}
+.modal-editar {
+    background-color: rgb(255, 242, 99);    
+}
+.form-group {
+    width:50%;
+    margin:0 auto 10px;
+}
+.modal-borrar {
+    background-color:rgb(255, 90, 90)
+}
+.titulo-modal-borrar {
+    margin:15px
+}
+*/
+/*
+.tabla-gastos-tar {
+    padding:5px    
+}
+.tarjeta-titulo {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    border:2px solid #8c8c8c;
+    width:100%;
+    height:70px;
+    padding:20px;
+    margin-bottom:10px;
+    background:#FAFAFA;
+}
+.tarjeta {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    border:2px solid #c7c5c5;
+    border-radius:10px;
+    width:100%;
+    padding:20px;
+    margin-bottom:10px
+}
+.tarjeta div {
+    margin:0 5px
+}*/
+/*
+.vistas {
+    margin-bottom:5px
+}
+.vistas ul li {
+    margin-right:5px
+}
+.vista {
+    background:#5D21D2
+}
+#hola {
+    background:red
+}
+
+app-ordenar {
+    margin-right: 5px;
+}
+
+
+.vistas-paginas {
+    display:flex;
+    justify-content:space-between
+}*/
+/*
+@media only screen and (max-width: 768px) {
+    #gastos{
+        padding:0
+    }
+}*/

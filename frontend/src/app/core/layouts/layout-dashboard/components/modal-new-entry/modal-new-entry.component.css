@@ -1,0 +1,114 @@
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.479);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal_content {
+  background: #fff;
+  border-radius: 6px;
+  height: auto;
+  width: 900px;
+  padding: 16px;
+}
+
+.label-title {
+  font-size: 16px;
+}
+
+.label-title,
+.title-principal,
+.title-small {
+  color: black;
+  font-weight: bold;
+}
+
+.title-principal {
+  font-size: 24px;
+}
+
+.title-small {
+  font-size: 14px;
+}
+
+.card-category {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 6px;
+  height: 64px;
+  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border-style {
+  border: 4px solid rgb(54, 135, 1);
+}
+
+.label-style {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 8px;
+}
+
+.distribution-btns {
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto;
+  gap: 16px;
+}
+
+.color-one {
+  background: #FAE39070;
+}
+
+.color-two {
+  background: #90CAFF70;
+}
+
+.color-three {
+  background: #6FD5B370;
+}
+
+.color-four {
+  background: #F78D8D70;
+}
+
+.color-five {
+  background: #BDC4CB70;
+}
+
+.color-six {
+  background: #FFB37C70;
+}
+
+.color-seven {
+  background: #A09EFC70;
+}
+
+.btn-close {
+  outline: none;
+  border: none;
+  height: 48px;
+  width: 48px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-close:hover {
+  background: rgba(246, 147, 147, 0.654);
+}
+
+.btn-close:hover .icon-close {
+  color: red;
+  font-size: 24px;
+  background: none;
+}

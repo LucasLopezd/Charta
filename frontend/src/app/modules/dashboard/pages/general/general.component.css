@@ -1,0 +1,45 @@
+:host {
+    display: block;
+    width: 100%;
+}
+/*
+Estilos generales*/
+*{
+  font-family: 'Open Sans';
+}
+  
+.layout-size {
+    min-height: calc(100vh - 192px);
+}
+
+
+#myChart{
+  /*  background-image: url("./../../../../../assets/img/grafico-ejemplo.png");*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#fechita {
+  margin-left:50px;
+}
+.colorIngreso {
+  background:rgb(156, 226, 163)
+}
+.colorGasto {
+  background:rgb(237, 239, 136)
+}
+tbody tr {
+  height:20px;
+  font-size: 1rem;
+}
+thead tr {
+  background-color:#FAFAFA;
+  font-size:1rem;
+}
+th {
+  padding:15px
+}
+td {
+  padding:15px
+}

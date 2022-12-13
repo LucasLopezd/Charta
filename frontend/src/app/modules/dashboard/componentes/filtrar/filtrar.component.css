@@ -1,0 +1,18 @@
+* {
+    margin:o;
+    padding:0
+}
+.btn-aceptar {
+    background:#FF8328;
+    color:white;   
+    margin:0 auto
+}
+#boton-filtrar {
+    padding:20px
+}
+@media only screen and (max-width: 420px) {
+    #abrete {
+      position:absolute;
+      left: -120px !important;
+    }
+}

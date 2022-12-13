@@ -1,0 +1,84 @@
+<div class="modal" (click)="closeModal()">
+  <div class="modal_content flex-column d-flex gap-4">
+    <header class="d-flex justify-content-end">
+      <button class="btn-close" (click)="closeModal()"><i class="bi bi-x-lg icon-close"></i></button>
+    </header>
+
+    <body class="body-modal">
+
+
+      <h1 class="title-principal mb-4">Crear móvimiento</h1>
+
+      <form class="d-flex flex-column gap-3" action="" autocomplete="off">
+
+        <label class="label-title w-100" for=""> Titulo
+          <input type="text" id="title" class="form-control mt-1" placeholder="Ingresar titulo"/>
+          <div class="d-flex justify-content-end title-small"><span>1/30</span></div>
+        </label>
+
+        <label class="label-title w-100" for=""> Ingresar cantidad
+          <div class="input-group mt-1">
+            <input type="text" class="form-control" aria-label="Amount" placeholder="0">
+            <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+          </div>
+        </label>
+
+        <label class="label-title w-100 " for=""> Seleccionar categoria
+          <div class="d-grid label-style mt-1">
+            <ng-container *ngFor="let category of categories; index as i">
+              <div [ngClass]="{'card-category' : true,
+              'border-style' : selectCategory === i,
+            'color-one' : i === 0,
+            'color-two' : i === 1,
+            'color-three' : i === 2,
+            'color-four' : i === 3,
+            'color-five' : i === 4,
+            'color-six' : i === 5,
+            'color-seven' : i === 6}" (click)="categorySelect(i)">
+                <p class="title-categories m-0">{{ category.title }}</p>
+              </div>
+            </ng-container>
+          </div>
+        </label>
+
+
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+          <label class="label-title" for="floatingTextarea">Descripción</label>
+        </div>
+
+        <label class="col-12 label-title"> Fecha
+          <div class="input-group mt-1">
+            <input
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="dp"
+              [(ngModel)]="model"
+              ngbDatepicker
+              #d="ngbDatepicker"
+              (click)="d.toggle()"
+            />
+            <span class="input-group-text"><i class="bi bi-calendar-event"></i></span>
+          </div>
+        </label>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [checked]="checkedDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Incluirlo en las estadisticas
+          </label>
+        </div>
+
+        <div class="d-grid distribution-btns">
+          <button class="btn btn-danger" type="button" (click)="closeModal()">Cancelar</button>
+          <button class="btn btn-primary d-flex flex-row gap-1 justify-content-center" type="button">
+            <i class="bi bi-check"></i>
+           <p> Crear movimiento </p>
+          </button>
+        </div>
+
+      </form>
+    </body>
+
+  </div>
+</div>
